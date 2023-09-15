@@ -57,13 +57,7 @@ function string_2() {
     // console.log('Ваш набор данных - \n' + s);
     let musor_sort = s.replace(musor, "")
     console.log('Мусор - ' + musor_sort);
-    // console.log('Буквы и цифры - ' + s.replace(num_char, ""));
-    // console.log('Только буквы - ' + s.replace(char, ""));
-    
-    // let numbers = Number(s.replace(num, "").length);
-    // console.log('Только цифры - ' + s.replace(num, ""));
-    // console.log('Количество цифр в строке - ' + numbers);
-    
+
 let len = musor_sort.length
 let arr1 = [];
 
