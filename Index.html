@@ -35,8 +35,21 @@
                 <button class="btn_str_num" onclick="string_2()">Подсчет строк</button><br>
 
         </div>
-        <textarea id="text1" name="text1" readonly >Вывод результата:</textarea>
+        <div id="text1" name="text1" readonly ><h1>Вывод результата:</h1>
+        </div>
+        <div class="variables" id="var_txt">
+            <h1>Выражения в определениях</h1>
+            <p>HELLO</p>
+            <pre class="hljs"><code >
+    <span style="color: #009999">62.5</span><span style="color: #999988;font-style: italic">              // 62.5</span>
+    <span style="color: #009999">50</span><span style="color: #000000;font-weight: bold">*</span> <span style="color: #009999">1.25</span>        <span style="color: #999988;font-style: italic">  // 62.5</span>
+    <span style="color: #009999">120</span><span style="color: #000000;font-weight: bold">/</span> <span style="color: #009999">10</span> <span style="color: #000000;font-weight: bold">*</span> <span style="color: #009999">2</span>     <span style="color: #999988;font-style: italic">  // 24</span>
+    <span style="color: #d14">'</span><span style="color: #d14">hello</span><span style="color: #d14">'</span>          <span style="color: #999988;font-style: italic">// hello</span>
+    <span style="color: #d14">'</span><span style="color: #d14">Good</span><span style="color: #d14">'</span> <span style="color: #000000;font-weight: bold">+</span> <span style="color: #d14">'</span><span style="color: #d14">will</span><span style="color: #d14">'</span>  <span style="color: #999988;font-style: italic">// Goodwill</span>
+                </code></pre>
+        </div>
     </div>
+
     
 
     <script src="js/script.js"></script>
