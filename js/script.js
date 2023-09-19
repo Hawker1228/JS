@@ -1,3 +1,7 @@
+function getTextLength(str) {
+    return [...str].length;
+}
+
 // console.log('3 + 4 =', 3 + 4);
 // console.log((8 / 4) - (8 + (2 - 1)) + 7 * 2);
 // console.log(3 ** 5);
@@ -89,9 +93,78 @@ function string_2() {
         text_vivod.style.height+=(sum_key*35)+"px";
 }
 
-let dollarsCount = 50 * 1.25;
-const dollar =  document.getElementById("var_txt");
-let dollar_p = dollar.appendChild(document.createElement("p")).innerText='Huy';
 
-console.log(dollarsCount);
+const text_test1 =  document.getElementById("var_txt");
+let text32 = text_test1.appendChild(document.createElement("p")).innerText='Huy';
 
+var add_itm = document.getElementById('main_div');
+var elem1 = document.createElement('div');
+console.log(elem1,add_itm);
+add_itm.appendChild(elem1).className='variables';
+
+// ВЫРАЖЖЕНИЯ
+let rublesPerDollar = 60;
+let dollarsCount = 50  * 1.25;
+let rublesCount = dollarsCount * rublesPerDollar;
+console.log('Thhe price is ' + rublesCount + ' rubles');
+
+// Интерполяция
+const firstName = 'Joffrey';
+const greeting = 'Hello';
+
+// Обратите внимание на ограничители строки, это бектики
+// Интерполяция не работает с одинарными и двойными кавычками
+console.log(`${greeting}, ${firstName}!`);
+// Явное преобразование типов
+const number = parseInt('345');
+console.log(number); // => 345
+const value = '0';
+// Внутри скобок можно указывать переменную
+const number1 = parseInt(value);
+console.log(number1); // => 0
+
+// Или конкретное значение
+const number2 = parseInt('10');
+console.log(number2); // => 10
+
+// Если преобразуется число с плавающей точкой
+// то отбрасывается вся дробная часть
+const number5 = parseInt(3.5);
+console.log(number5); // => 3
+const value3 = parseFloat('0.5');
+console.log('This type of "' + typeof(value3) + '" ' + value3); // 0.5
+let num = parseFloat(-0.304);
+console.log(num);
+
+let firstName1 = 'Alexander';
+// Код выполнится без ошибок
+firstName1[0] = 'B';
+console.log(firstName1); // => Alexander но символ внутри не поменяется
+// Слабая типизация
+console.log(1 + '7'); // => 17
+const result = 'one' * 'two';
+console.log(result); // => NaN
+
+// ФУНКЦИИ
+const resultfunc = getTextLength('HELP');
+console.log(resultfunc + ' ' + 'HELP'.length);
+
+
+const strin = "The quick red fox jumped over the lazy dog's back.";
+
+const iterator = strin[Symbol.iterator]();
+let theChar = iterator.next();
+
+while (!theChar.done && theChar.value !== ' ') {
+  console.log(theChar.value);
+  theChar = iterator.next();
+  // Expected output: "T"
+  //                  "h"
+  //                  "e"
+}
+console.log(Math.pow(2, 3)); // 8  Пример возведения в степень через ф-цию
+const round = (number, precision = 0) => {
+    return Math.round( number * Math.pow(10, precision)) / Math.pow(10, precision);
+  };
+const result3 = round(10.25, 1); // 10.3  фу-ция округления
+console.log(result3); 
