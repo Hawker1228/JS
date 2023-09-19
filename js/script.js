@@ -1,6 +1,9 @@
 function getTextLength(str) {
     return [...str].length;
 }
+function sum_num(a,b) {
+    return (a + b);
+}
 
 // console.log('3 + 4 =', 3 + 4);
 // console.log((8 / 4) - (8 + (2 - 1)) + 7 * 2);
@@ -89,7 +92,6 @@ function string_2() {
             sum_key += h_txt;
         }
         console.log(sum_key);
-        
         text_vivod.style.height+=(sum_key*35)+"px";
 }
 
@@ -146,15 +148,13 @@ const result = 'one' * 'two';
 console.log(result); // => NaN
 
 // ФУНКЦИИ
-const resultfunc = getTextLength('HELP');
+const resultfunc = getTextLength('HELP'); //Длинна строки
 console.log(resultfunc + ' ' + 'HELP'.length);
 
 
 const strin = "The quick red fox jumped over the lazy dog's back.";
-
 const iterator = strin[Symbol.iterator]();
 let theChar = iterator.next();
-
 while (!theChar.done && theChar.value !== ' ') {
   console.log(theChar.value);
   theChar = iterator.next();
@@ -162,9 +162,28 @@ while (!theChar.done && theChar.value !== ' ') {
   //                  "h"
   //                  "e"
 }
+
 console.log(Math.pow(2, 3)); // 8  Пример возведения в степень через ф-цию
 const round = (number, precision = 0) => {
     return Math.round( number * Math.pow(10, precision)) / Math.pow(10, precision);
   };
 const result3 = round(10.25, 1); // 10.3  фу-ция округления
 console.log(result3); 
+console.log(Math.sqrt());
+
+const name1 = 'JavaScript';
+const lastIndex = getTextLength(name1)-1;
+console.log(lastIndex); // 9 находим индекс отсчет от нуля идет
+const name2 = 'JavaScript';
+// Используется интерполяция
+console.log(`Последний символ: ${name2[getTextLength(name2) - 1]}`);
+// 'Последний символ: t'
+
+// Проверка своей ф-ции  
+let frw = sum_num(5, 5);
+let res2 = sum_num(sum_num(1, 3), sum_num(sum_num(4, 2), 4));
+console.log(res2,frw);
+//ВЫВОД ПЕРВОЙ И ПОСЛЕДНЕЙ БУКВЫ
+const text34 = 'Never forget what you are, for surely the world will not';
+var laInd1 = text34[getTextLength(text34)-1]; 
+console.log('First: ' + text34[(text34[0]).length -1] +'\n' + 'Last: ' + (laInd1));
