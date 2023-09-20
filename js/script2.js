@@ -16,7 +16,7 @@ console.log(arr);
 
 
 //ПЕРЕНОС ТЕКСТА В МАССИВ
-const string_2 = 'Robb353233';
+const string_2 = 'Robb353к23а3с';
 function str_to_arr(str) {
     const str_len = str.length;
     var arr = [];
@@ -38,15 +38,48 @@ console.log(n_arr);
 
 
 // ПОИСК БУКВЫ В МАССИВЕ #2
-var bukva = '3';
-var schet = 0;
+var value = 'b';
+var count = 0;
 for(i = 0; i < n_arr.length; i++){
     var ind = n_arr[i];
-    if(ind === bukva){
-
-        schet += 1;   
+    if(value === ind){
+      count += 1;   
     }
 }
-console.log('Есть значение =  <' + ind + '> количество = ' + schet);
+console.log('Значение = '  + value + ' количество = ' + count);
 
+// ЗАПИСЬ ФУНКЦИЙ В ПЕРЕМЕННЫЕ
+var plus = function sum(att,att2){return att+att2};
+var minus = function minus(att,att2){return att-att2};
+console.log(minus(5,2));
+console.log(plus(5,2));
 
+// ПОИСК БУКВ ИЛИ ЦИФР В МАССИВЕ 
+function find_value(arr,value){
+  var count = 0;
+  var val;
+  for(let i = 0; i < arr.length; i++){
+    var ind = n_arr[i];
+    if((value === parseInt(ind)) || (value.toUpperCase() === ind.toUpperCase())){  // ПРИВЕЛ БУКВЕННЫЕ ДАННЫЕ В ОБЩИЙ ВЕРХНИЙ РЕГИСТР
+      count+=1;
+    }
+  }
+  var res=('Найдено значение: "' + value + "\" " + 'Кол-во = ' + `${parseInt(count)}`);
+  return res;
+}
+// console.log(find_value(n_arr,val = prompt()));
+
+//УБИРАЕМ ПРОБЕЛЫ и "\n" с помощью .trim() 
+let firstName = '  Grigor   \n';
+let name_r = firstName.trim();
+console.log(firstName=name_r);
+// ЦЕПОЧКА ВЫЗОВОВ 
+const nameT = 'Tirion';
+console.log(nameT.length.toString());
+console.log(nameT.toUpperCase().toLowerCase().length.toString().length);
+const number = 123;
+console.log(typeof number.toString());
+//.slice() ПОЛУЧАЕМ ЧАСТЬ ПРЕДЛОЖЕНИЯ  .replace() ЗАМЕНЯЕМ НУЖНОЕ СЛСВО
+const text53 = 'When you play a game of thrones you win or you die.';
+var text32 = text53.slice(5,13).replace('you','someone');
+console.log(text32);
