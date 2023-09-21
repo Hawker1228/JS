@@ -83,3 +83,8 @@ console.log(typeof number.toString());
 const text53 = 'When you play a game of thrones you win or you die.';
 var text32 = text53.slice(5,13).replace('you','someone');
 console.log(text32);
+
+// СОЗДАЕМ ФУНКЦИЮ
+const showGretting = () => {
+  
+}
