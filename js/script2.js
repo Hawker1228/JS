@@ -86,5 +86,22 @@ console.log(text32);
 
 // СОЗДАЕМ ФУНКЦИЮ
 const showGretting = () => {
-  
-}
+  const text = 'Hello, Hexlet';
+  console.log(text);
+};
+showGretting();
+
+// ФУНКЦИЯ ПРОВЕРКИ ВВОДА ПОЧТЫ И АВТО_УБОРКА ПРОБЕЛОВ ВНУТРИ И СНАРУЖИ
+const saveEmail = () => {
+  const EMAIL_REGEXP = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ // Фильтруем по знакам
+  var email = prompt().trim().replace(/[\s]/g,""); // СРАЗУ УБИРАЕМ ПРОБЕЛЫ
+  const trinnedEmail = email.replace(EMAIL_REGEXP, "-"); // С ПОМОЩЬЮ РЕГУЛЯРКИ ЗАДАЕМ МАСКУ
+  if(email === trinnedEmail) { // ЕСЛИ НАШ ВВОД НЕ СООТВЕТСВУЕТ МАСКЕ ТО ВЫДАЕМ СООБЩЕНИЕ
+    console.log('Не правильно ввели ваш Email = ' + trinnedEmail);
+  }
+  else if (email != trinnedEmail){ // ЕСЛИ МАСКА ВЕРНАЯ ТО УБИРАЕМ ЕЩЕ РАЗ ПРОБЕЛЫ И ВЫВОДИМ
+    var preparedEmail = email.trim().toLowerCase();
+    console.log('Правильно = ' + preparedEmail);
+  }
+};
+saveEmail();
