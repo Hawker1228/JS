@@ -104,4 +104,6 @@ const saveEmail = () => {
     console.log('Правильно = ' + preparedEmail);
   }
 };
-saveEmail();
+// saveEmail();
+
+// 
