@@ -1,3 +1,3 @@
 # JS
-This project on enjoy JS
-I am learning CSS, JS, HTML, and other languages. This training platform to me!
+This is my repository\project where I am learning JavaScript.
+I create here different functions & scripts in the course of studying, etc.
