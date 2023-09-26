@@ -23,7 +23,7 @@ console.log(newstr3); // Twas the night before Christmas...
 // Пример: смена местами слов в строке
 var re2 = /([А-ЯЁа-яё]+)\s([А-ЯЁа-яё]+)/;
 var str4 = "Джон Смит";
-var newstr4 = str4.replace(re, "$2, $1");
+var newstr4 = str4.replace(re2, "$2, $1");
 console.log(newstr4); // Смит, Джон
 
 // Пример: замена градусов по Фаренгейту на эквивалент в градусах по Цельсию

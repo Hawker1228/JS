@@ -106,4 +106,67 @@ const saveEmail = () => {
 };
 // saveEmail();
 
+// ОБРЕЗАКА ТЕКСТА И ПОДСТАНОВКА ТОЧЕК ВМЕСТО БУКВ
+const truncate = (text, length) => {
+  // BEGIN (write your solution here)
+  const word = text;
+  const ind = length;
+  const result = word.slice(word, ind);
+  // END
+  return (result + '...');
+};
+console.log(truncate('HEllo',2));
+
+// СКРЫТИЕ НОМЕРА КАРТЫ
+const getHiddenCard = (text, num = 4) => {
+  const txt_num = '*'.repeat(num);
+  const result = text.slice(12, 16);
+  return (txt_num + result);
+}
+console.log(getHiddenCard('1234567812345678'));
+
+// ПЕРВУЮ БУКВУ СДЕЛАТЬ БОЛЬШОЙ
+const capitalize = (text) => {
+  var result = text.slice(0,1).toUpperCase() + text.slice(1,text.length);;
+  return result;
+}
+console.log(capitalize('anna'));
+
+// ФУНКЦИИ ПРЕДИКАТЫ
+const isInfant = (age) => {
+  if(age <= 1) {
+    console.log('Это младенец (' + age + ') лет');
+  }
+  else {
+    console.log('Это уже не младенец (' + age + ') лет');
+  }
+}
+isInfant(0.5,1);
+
+// Напишем функцию проверки четности:
+const isEven = (num) => {
+  if(num%2===0){
+    return (num + ' Четное');
+  }
+  else {
+    return (num + ' Не четное');
+  }
+}
+console.log(isEven(2));
+
+// ПРОВЕРКА БОЛЬШАЯ ЛИ ПЕРВАЯ БУКВА
+const isFirstLetterInUpperCase = (string) => {
+  const firstLetter = string[0];
+  return firstLetter.toUpperCase() === firstLetter;
+};
+console.log(isFirstLetterInUpperCase('marmont')); // false
+console.log(isFirstLetterInUpperCase('Robb'));    // true
+
+// ПРОВЕРКА
+const isInternationalPhone =  (phon_num) => {
+  const firstLetter = (phon_num[0]==='+');
+  return firstLetter;
+}
+console.log(isInternationalPhone('+89602223423'));
+
 // 
