@@ -337,3 +337,14 @@ const getNumberExplanation = (num) => {
   return strOpisanie;
 }
 console.log(getNumberExplanation(7));
+
+//ПРИМЕР ЦИКЛА WHILE!!!
+const pritnNumbers = (lastNumber) => {
+  let i = lastNumber;
+  while (i >= 1){
+    console.log(i);
+    i = i-1;
+  }
+  console.log("Finished");
+};
+pritnNumbers(4);
