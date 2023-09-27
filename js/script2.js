@@ -218,7 +218,6 @@ console.log(getLetter(text55,0));
 const getTypeOfSentence = (sentence) => {
   const lastChar = sentence[sentence.length - 1];
   let sentenceType;
-
   if (lastChar === '?') {
     sentenceType = 'question';
   } else if (lastChar === '!') {
@@ -226,7 +225,6 @@ const getTypeOfSentence = (sentence) => {
   } else {
     sentenceType = 'normal';
   }
-
   return `Sentence is ${sentenceType}`;
 };
 getTypeOfSentence('Who?'); // Sentence is question
@@ -244,4 +242,98 @@ getTypeOfSentence('No!');  // Sentence is exclamation
 }
 console.log(normalizeUrl("https://google.com"));
 
+
+// ТЕРНАРНЫЙ ОПЕРАТОР!!!
+const abs = (number) => {
+  return number >= 0 ? number : -number;
+};
+// СОКРАЩЕНИЕ 
+const abs1 = (number) => (number >= 0 ? number : -number);
+
+// Было:
+const getTypeOfSentence1 = (sentence) => {
+  const lastChar = sentence.slice(-1);
+  if (lastChar === '?') {
+      return 'question';
+  }
+  return 'normal';
+};
+
+// Стало:
+const getTypeOfSentence2 = (sentence) => {
+  const lastChar = sentence.slice(-1);
+  return (lastChar === '?') ? 'question' : 'normal';
+};
+getTypeOfSentence('Hodor');  // normal
+getTypeOfSentence('Hodor?'); // question
+
+
+// ФУНКЦИЯ КОНВЕРТ ТЕКСТ
+const convertText = (str) => {
+  if(str === "") {
+    return str;
+  }
+  else if(str[0] !== str[0].toUpperCase()){
+    const str_len = str.length;
+    var arr = "";
+    for(let i = str_len-1; i >= 0; i--){
+     arr += str[i];
+      }
+    return arr;
+  }
+  return str;
+}
+console.log(convertText('hellou'));
+
 // 
+const statusStr = (str) => {
+  switch (str) {
+    case 'process':
+      break;
+    case 'paid':
+      break;
+    case 'new':
+      break;
+    default:
+      str ='Нет значений из списка';
+      return str;
+  }
+  return str;
+}
+console.log('Значение = ' + statusStr('paid'));
+
+// СРАВНЕНИЕ СТРОКИ С НАБОРОМ ИЗ МАССИВА
+const statusStrOfArr = (str) => {
+  var arr = ["Hello","say","buy","World","Friend"];
+  for(i= 0; i < arr.length-1; i++){
+    var stringOfArr = arr[i];
+    if(str === stringOfArr) {
+      var mess = 'Такое значение есть = ' + arr[i];
+      return mess;
+    }
+  }
+  console.log(arr);
+  mess = 'Нет такого';
+  return mess;
+}
+console.log(statusStrOfArr('World'));
+
+// принимает на вход число и возвращает объяснение этого числа.
+const getNumberExplanation = (num) => {
+  var strOpisanie = '';
+  switch (num) {
+    case 666 : 
+    strOpisanie = 'devil number';
+    break;
+    case 42 : 
+    strOpisanie = 'answer for everything';
+    break;
+    case 7 : 
+    strOpisanie = 'prime number';
+    break;
+    default:
+      strOpisanie = 'just number';
+  }
+  return strOpisanie;
+}
+console.log(getNumberExplanation(7));
