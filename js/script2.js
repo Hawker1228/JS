@@ -169,4 +169,79 @@ const isInternationalPhone =  (phon_num) => {
 }
 console.log(isInternationalPhone('+89602223423'));
 
+// Область математики, в которой изучаются логические операторы, называется булевой алгеброй.
+// И &&
+/*
+A	     B	   A && B
+TRUE	TRUE	TRUE
+TRUE	FALSE	FALSE
+FALSE	TRUE	FALSE
+FALSE	FALSE	FALSE
+*/
+// true && true;
+// 3 > 2 && 'wow'.startsWith('w'); // true
+
+// true && false;
+// 'start' === 'start' && 8 < 3; // false
+/*
+ИЛИ ||
+A	     B	   A || B
+TRUE	TRUE	TRUE
+TRUE	FALSE	TRUE
+FALSE	TRUE	TRUE
+FALSE	FALSE	FALSE
+*/
+// ПОКАЗАТЬ ВЕСОКОСНЫЙ ГОД ИЛИ НЕТ
+const isLeapYear = (year) => {
+  var numb = year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
+  return numb;
+}
+console.log(isLeapYear(2016));
+console.log(true || 'yes');
+
+//ВЫВЕСТИ БУКВУ ПО НОМЕРУ ИЛИ ПУСТУЮ СТРОКУ
+const text55 = 'Hexlet';
+const getLetter = (text,numb) => {
+  var result = text[numb-1];
+  if (result === undefined)
+  {
+    result = '';
+  }
+  else {
+    result = result;
+  }
+  return result;
+}
+console.log(getLetter(text55,0));
+
+// ПРОВЕРКА ТИПА ПРЕДЛОЖЕНИЯ
+const getTypeOfSentence = (sentence) => {
+  const lastChar = sentence[sentence.length - 1];
+  let sentenceType;
+
+  if (lastChar === '?') {
+    sentenceType = 'question';
+  } else if (lastChar === '!') {
+    sentenceType = 'exclamation';
+  } else {
+    sentenceType = 'normal';
+  }
+
+  return `Sentence is ${sentenceType}`;
+};
+getTypeOfSentence('Who?'); // Sentence is question
+getTypeOfSentence('No');   //  Sentence is normal
+getTypeOfSentence('No!');  // Sentence is exclamation
+
+// ЕСЛИ НЕТ HTTPS ТО ДОПИСЫВАТЬ
+  const normalizeUrl = (url) => {
+  var url_begin = url.startsWith('https://',0);
+  if(url_begin === false) {
+    var change_url = "https://" + url;
+    return change_url;
+  }
+  return url;
+}
+console.log(normalizeUrl("https://google.com"));
+
 // 
