@@ -378,4 +378,42 @@ const countChars = (str, char) => {
 };
 console.log(countChars('Fear cuts deeper than swords.','E'));
 
-// 
+// МЕНЯТЬ РЕГИСТР КАЖДОЙ n-ой Буквы
+const makeItFunny = (text,num) => {
+  let i = 0;
+  let result = '';
+  let len = text.length;
+  for (let i=0; i<len; i++){
+    if ((i + 1) % num === 0) {
+      result += text[i].toUpperCase();
+    }
+    else {
+      result += text[i];
+    }
+  }
+  return result;
+}
+console.log(makeItFunny('I never look back',3));
+
+// ПЕЕРЕВОРОТ СТРОКИ ЧЕРЕЗ  FOR
+const reverseString = (str) => {
+  let result = '';
+  for (let i = 0; i < str.length; i += 1) {
+    result = `${str[i]}${result}`;
+  }
+  return result;
+};
+
+// ПОКАЗАТЬ ПОЛ СТРОКИ ЕСЛИ НЕЧЕТНАЯ ДЛИННА ТО ВЕРНУТЬ БОЛЬШУЮ ЧАСТЬ
+const getHalfString = (str) => {
+  let i = 0;
+  let result = '';
+  let len = str.length;
+  for (let i=len-1; i>=0; i--){
+    if ((i / 2) % 2 === 0) {
+      result += str[i];
+    }
+  }
+  return result;
+};
+console.log(getHalfString("move")); // 123
