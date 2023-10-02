@@ -212,7 +212,7 @@ const getLetter = (text,numb) => {
   }
   return result;
 }
-console.log(getLetter(text55,0));
+// console.log(getLetter(text55,0));
 
 // ПРОВЕРКА ТИПА ПРЕДЛОЖЕНИЯ
 const getTypeOfSentence = (sentence) => {
@@ -348,3 +348,34 @@ const pritnNumbers = (lastNumber) => {
   console.log("Finished");
 };
 pritnNumbers(4);
+
+// ВЫВОД БУКВ ОТ первой до Определенной
+const mySubstr = (str,length) => {
+  let i = 0;
+  let result = '';
+  while (i <= str.length-1) {
+    result += str[i];
+    i = i+1;
+    if (i === length) break;
+  }
+  return result;
+}
+console.log(mySubstr('got',3));
+
+// Считает, сколько раз входит буква в предложение. 
+const countChars = (str, char) => {
+  let i = 0;
+  let count = 0; // Кол-во букв
+  let str_up =str.toUpperCase();
+  let char_up = char.toUpperCase();
+  while (i< str_up.length) {
+    if (str_up[i] === char_up) { // Еслии индекс символа равен букве поиска
+      count = count + 1; // прибавляем +1 к результату
+    }
+    i = i + 1; // Увеличиваем счетчик
+  }
+  return ('Символов "'  + char_up + '" кол-во ' + count);
+};
+console.log(countChars('Fear cuts deeper than swords.','E'));
+
+// 
