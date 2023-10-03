@@ -404,16 +404,32 @@ const reverseString = (str) => {
   return result;
 };
 
-// ПОКАЗАТЬ ПОЛ СТРОКИ ЕСЛИ НЕЧЕТНАЯ ДЛИННА ТО ВЕРНУТЬ БОЛЬШУЮ ЧАСТЬ
-const getHalfString = (str) => {
-  let i = 0;
-  let result = '';
-  let len = str.length;
-  for (let i=len-1; i>=0; i--){
-    if ((i / 2) % 2 === 0) {
-      result += str[i];
-    }
+// ШИФРОВАНИЕ СТРОКИ
+const encrypt = (text) => { // функция: надо перевернуть каждые два символа из текста
+  let result = ''; // нейтральная пустая строка
+  for (let i = 0; i < text.length; i+= 2) { // движение по циклу от 0, пока не дойдём до конца массива, с шагом в 2 символа
+    result = `${result}${text[i + 1] !== undefined ? text[i + 1] : ''}${text[i]}`;
+                        // если: текст в квадратных скобках первый символ плюс второй символ
+                        // не равен неопределенному значению
+                        // вернуть: текст в квадратных скобках первый символ плюс второй символ
+                        // иначе: вернуть пустую строку
+                        // добавим первый символ из текста 
   }
+
   return result;
 };
-console.log(getHalfString("move")); // 123
+console.log(encrypt("move")); 
+
+// ПОСЛЕДНЕЕ ЗАДАНИЕ КУРСА HEXLET
+const getTriangleArea = (h,b) => { 
+  let a = 0.5;
+  let plosh = ((a * h) *b);
+  return plosh;
+  }
+  console.log(getTriangleArea(15,12)); 
+  const finalFunc = (n) => {
+    let result = getTriangleArea(n,Math.pow(n,2)/2);
+    return result;
+  }
+  console.log(finalFunc(4));
+
